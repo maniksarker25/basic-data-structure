@@ -1,3 +1,4 @@
+// learn about vector capicity
 #include <bits/stdc++.h>
 
 using namespace std;

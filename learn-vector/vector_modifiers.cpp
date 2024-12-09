@@ -1,3 +1,4 @@
+// vector modifier => pop back => insert => erase
 #include <bits/stdc++.h>
 
 using namespace std;

@@ -1,3 +1,4 @@
+// initialize the vector
 #include <bits/stdc++.h>
 
 using namespace std;

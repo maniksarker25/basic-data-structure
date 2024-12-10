@@ -1,4 +1,4 @@
-	Command being timed: "./vector_modifier2.out"
+	Command being timed: "./vector_find.out"
 	User time (seconds): 0.00
 	System time (seconds): 0.00
 	Percent of CPU this job got: 100%

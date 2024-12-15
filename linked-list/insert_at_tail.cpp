@@ -1,5 +1,4 @@
-// insert at head in linked list---------
-
+// insert at tail in linked list
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -18,14 +17,28 @@ public:
 };
 
 // function for insert at head
-void insert_at_head(Node *&head, int val)
+void insert_at_tail(Node *&head, int val)
 {
-    // crete new node
+    // create new node
     Node *newNode = new Node(val);
-    // set the head memory address to the newNode.next
-    newNode->next = head;
-    // then set the first node as head
-    head = newNode;
+
+    // handle corner case
+    if (head == NULL)
+    {
+        head = newNode;
+        return;
+    }
+
+    // make connection with current last node with new node
+    Node *temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+
+    // right now temp node in last node after loop
+    // make connection here
+    temp->next = newNode;
 };
 
 // print linked list
@@ -49,9 +62,9 @@ int main()
     head->next = a;
     a->next = b;
 
-    insert_at_head(head, 100);
-    insert_at_head(head, 200);
-    insert_at_head(head, 300);
+    insert_at_tail(head, 40);
+    insert_at_tail(head, 50);
+    insert_at_tail(head, 60);
     print_linked_list(head);
     return 0;
 }

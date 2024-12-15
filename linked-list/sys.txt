@@ -1,4 +1,4 @@
-	Command being timed: "./print_linked_list.out"
+	Command being timed: "./reference_of_a_pointer.out"
 	User time (seconds): 0.00
 	System time (seconds): 0.00
 	Percent of CPU this job got: 100%

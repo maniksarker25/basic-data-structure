@@ -1,4 +1,4 @@
-// insert at tail optimize
+// input linked list -----------
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -50,17 +50,20 @@ void print_linked_list(Node *head)
 
 int main()
 {
+    Node *head = NULL;
+    Node *tail = NULL;
+    int val;
+    while (true)
+    {
+        cin >> val;
+        if (val == -1)
+        {
+            break;
+        }
+        insert_at_tail(head, tail, val);
+    }
 
-    Node *head = new Node(10);
-    Node *a = new Node(20);
-    // also make tail
-    Node *tail = new Node(30);
-
-    head->next = a;
-    a->next = tail;
-
-    insert_at_tail(head, tail, 40);
-    insert_at_tail(head, tail, 50);
     print_linked_list(head);
+
     return 0;
 }

@@ -1,5 +1,4 @@
-// insert at any position in linked list---------
-
+// insert at tail optimize
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -18,21 +17,23 @@ public:
 };
 
 // function for insert at head
-void insert_at_any_pos(Node *&head, int idx, int val)
+void insert_at_tail(Node *&head, Node *&tail, int val)
 {
-
+    // create new node
     Node *newNode = new Node(val);
 
-    // take head to the inx -1 position
-    Node *temp = head;
-    for (int i = 0; i < idx - 1; i++)
+    // handle corner case
+    if (head == NULL)
     {
-        temp = temp->next;
+        head = newNode;
+        return;
     }
-    // set new node next = the address of idx node ---
-    newNode->next = temp->next;
-    // set temp ar next = new node
-    temp->next = newNode;
+
+    // make connection with current last node with new node
+    tail->next = newNode;
+
+    // then move the tail to new node
+    tail = newNode;
 };
 
 // print linked list
@@ -51,14 +52,14 @@ int main()
 
     Node *head = new Node(10);
     Node *a = new Node(20);
-    Node *b = new Node(30);
+    // also make tail
+    Node *tail = new Node(30);
 
     head->next = a;
-    a->next = b;
+    a->next = tail;
 
-    insert_at_any_pos(head, 2, 100);
-    insert_at_any_pos(head, 2, 200);
-
+    insert_at_tail(head, tail, 40);
+    insert_at_tail(head, tail, 50);
     print_linked_list(head);
     return 0;
 }

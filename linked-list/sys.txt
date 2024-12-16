@@ -1,4 +1,4 @@
-	Command being timed: "./input_linked_list.out"
+	Command being timed: "./linked_list_reverse_printing.out"
 	User time (seconds): 0.00
 	System time (seconds): 0.00
 	Percent of CPU this job got: 100%
@@ -7,7 +7,7 @@
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 3456
+	Maximum resident set size (kbytes): 3584
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
 	Minor (reclaiming a frame) page faults: 138

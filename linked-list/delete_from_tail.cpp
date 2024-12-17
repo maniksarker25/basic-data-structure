@@ -1,3 +1,4 @@
+// delete a node from tail
 // delete from any pos-----------
 #include <bits/stdc++.h>
 
@@ -49,7 +50,7 @@ void print_linked_list(Node *head)
 }
 
 // delete from head
-void delete_from_tail(Node *&head, int idx)
+void delete_from_tail(Node *&head, Node *&tail, int idx)
 {
     Node *temp = head;
     for (int i = 1; i < idx; i++)
@@ -60,6 +61,7 @@ void delete_from_tail(Node *&head, int idx)
     Node *delete_node = temp->next;
     temp->next = temp->next->next;
     delete delete_node;
+    tail = temp;
 }
 
 int main()
@@ -76,7 +78,7 @@ int main()
         }
         insert_at_tail(head, tail, val);
     }
-    delete_from_tail(head, 2);
+    delete_from_tail(head, tail, 3);
     print_linked_list(head);
 
     return 0;

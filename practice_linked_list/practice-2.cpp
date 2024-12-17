@@ -1,4 +1,8 @@
-// Question: Take a singly linked list as input and print the size of the linked list.
+/*
+Question: Take a singly linked list as input and check if the linked list is sorted in ascending order.
+
+
+ */
 
 #include <bits/stdc++.h>
 
@@ -30,18 +34,26 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     return;
 }
 
-int cout_node(Node *head)
+void check_sort(Node *head)
 {
-    int count = 0;
     Node *temp = head;
-
-    while (temp != NULL)
+    int is_ascending = 1;
+    while (temp->next != NULL)
     {
-        count++;
+        if (temp->val > temp->next->val)
+        {
+            is_ascending = 0;
+        }
         temp = temp->next;
     }
-
-    return count;
+    if (is_ascending == 1)
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
 }
 
 void print_linked_list(Node *head)
@@ -71,10 +83,7 @@ int main()
 
         insert_at_tail(head, tail, val);
     }
-
-    int total_count = cout_node(head);
-    cout << total_count;
-    // print_linked_list(head);
+    check_sort(head);
 
     return 0;
 }

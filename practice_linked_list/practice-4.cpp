@@ -1,6 +1,8 @@
-/*
-Question: Take a singly linked list as input and check if the linked list contains any duplicate value. You can assume that the maximum value will be 100.
 
+
+/*
+
+Question: Take a singly linked list as input and print the middle element. If there are multiple values in the middle print both.
  */
 
 #include <bits/stdc++.h>
@@ -33,34 +35,41 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     return;
 }
 
-void check_duplicate(Node *head)
+int cout_node(Node *head)
 {
+    int count = 0;
     Node *temp = head;
-    int freq[105] = {0};
-    int duplicate = 0;
+
     while (temp != NULL)
     {
-        freq[temp->val]++;
+        count++;
         temp = temp->next;
     }
 
-    for (int i = 0; i < 105; i++)
+    return count;
+}
+
+void print_middle(Node *head, int total)
+{
+    Node *temp = head;
+    int middle = total / 2;
+    // cout << middle;
+    if (middle % 2 != 0)
     {
-        if (freq[i] > 1)
+        for (int i = 0; i < middle - 1; i++)
         {
-            duplicate = 1;
-            break;
+            temp = temp->next;
         }
+        cout << temp->val << " " << temp->next->val;
     }
-
-    if (duplicate == 1)
-    {
-        cout << "YES";
-    }
-
     else
     {
-        cout << "NO";
+        for (int i = 0; i < middle; i++)
+        {
+            temp = temp->next;
+        }
+
+        cout << temp->val;
     }
 }
 
@@ -81,7 +90,9 @@ int main()
 
         insert_at_tail(head, tail, val);
     }
-    check_duplicate(head);
+
+    int total_node = cout_node(head);
+    print_middle(head, total_node);
 
     return 0;
 }

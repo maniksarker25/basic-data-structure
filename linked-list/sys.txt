@@ -1,4 +1,4 @@
-	Command being timed: "./linked_list_reverse_printing.out"
+	Command being timed: "./insert_at_head.out"
 	User time (seconds): 0.00
 	System time (seconds): 0.00
 	Percent of CPU this job got: 100%

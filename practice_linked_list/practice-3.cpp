@@ -1,6 +1,5 @@
 /*
-Question: Take a singly linked list as input and check if the linked list is sorted in ascending order.
-
+Question: Take a singly linked list as input and check if the linked list contains any duplicate value. You can assume that the maximum value will be 100.
 
  */
 
@@ -37,32 +36,29 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
 void check_duplicate(Node *head)
 {
     Node *temp = head;
-    int is_ascending = 1;
-    while (temp->next != NULL)
-    {
-        if (temp->val > temp->next->val)
-        {
-            is_ascending = 0;
-        }
-        temp = temp->next;
-    }
-    if (is_ascending == 1)
-    {
-        cout << "YES";
-    }
-    else
-    {
-        cout << "NO";
-    }
-}
-
-void print_linked_list(Node *head)
-{
-    Node *temp = head;
+    int freq[105] = {0};
+    int duplicate = 0;
     while (temp != NULL)
     {
-        cout << temp->val << endl;
+        freq[temp->val]++;
         temp = temp->next;
+    }
+
+    for (int i = 0; i < 105; i++)
+    {
+        if (freq[i] > 1)
+        {
+            duplicate = 1;
+            break;
+        }
+    }
+
+    if(duplicate == 1){
+        cout << "YES";
+    }
+
+    else{
+        cout << "NO";
     }
 }
 

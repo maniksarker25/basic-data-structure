@@ -99,13 +99,10 @@ int main()
         insert_at_tail(head, tail, val);
     }
 
-    int q;
-    cin >> q;
+    int idx;
 
-    for (int i = 0; i < q; i++)
+    while (cin >> idx >> val)
     {
-        int idx, val;
-        cin >> idx >> val;
 
         int total_node = count_node(head);
 
@@ -130,7 +127,6 @@ int main()
             print_linked_list(head);
         }
     }
-    // ncie ot
 
     return 0;
 }

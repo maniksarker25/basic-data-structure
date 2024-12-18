@@ -1,4 +1,7 @@
-// Question: Take a singly linked list as input and print the size of the linked list.
+/*
+Question: Take two singly linked lists as input and check if their sizes are same or not.
+
+ */
 
 #include <bits/stdc++.h>
 
@@ -9,6 +12,7 @@ class Node
 public:
     int val;
     Node *next;
+
     Node(int val)
     {
         this->val = val;
@@ -31,28 +35,18 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     return;
 }
 
-int cout_node(Node *head)
+// count linked list
+int count_linked_list(Node *head)
 {
-    int count = 0;
     Node *temp = head;
-
+    int count = 0;
     while (temp != NULL)
     {
-        count++;
         temp = temp->next;
+        count++;
     }
 
     return count;
-}
-
-void print_linked_list(Node *head)
-{
-    Node *temp = head;
-    while (temp != NULL)
-    {
-        cout << temp->val << endl;
-        temp = temp->next;
-    }
 }
 
 int main()
@@ -60,10 +54,12 @@ int main()
 
     Node *head = NULL;
     Node *tail = NULL;
-    int val;
+    Node *head2 = NULL;
+    Node *tail2 = NULL;
+
     while (true)
     {
-
+        int val;
         cin >> val;
         if (val == -1)
         {
@@ -72,10 +68,28 @@ int main()
 
         insert_at_tail(head, tail, val);
     }
+    while (true)
+    {
+        int val;
+        cin >> val;
+        if (val == -1)
+        {
+            break;
+        }
 
-    int total_count = cout_node(head);
-    cout << total_count;
-    // print_linked_list(head);
+        insert_at_tail(head2, tail2, val);
+    }
 
+    int first_count = count_linked_list(head);
+    int second_count = count_linked_list(head2);
+
+    if (first_count == second_count)
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
     return 0;
 }

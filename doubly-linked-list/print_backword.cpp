@@ -1,4 +1,4 @@
-// print doubly linked list forward
+// print linked list backword
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,13 +17,13 @@ public:
     }
 };
 
-void print_backword(Node *head)
+void print_backword(Node *tail)
 {
-    Node *temp = head;
+    Node *temp = tail;
     while (temp != NULL)
     {
         cout << temp->val << " ";
-        temp = temp->next;
+        temp = temp->prev;
     }
 }
 
@@ -32,7 +32,7 @@ int main()
 
     Node *head = new Node(10);
     Node *a = new Node(20);
-    Node *tail = new Node(30);
+    Node *tail = new Node(40);
 
     // make connection
     head->next = a;
@@ -41,7 +41,7 @@ int main()
     tail->prev = a;
 
     // print forward
-    print_backword(head);
+    print_backword(tail);
 
     return 0;
 }

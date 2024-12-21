@@ -30,9 +30,17 @@ void print_forword(Node *head)
 
 // insert at head
 
-void insert_at_head(Node *&head, int val)
+void insert_at_head(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
+
+    // handle corner case
+    if (head == NULL)
+    {
+        head = newNode;
+        tail = newNode;
+        return;
+    }
 
     newNode->next = head;
     head->prev = newNode;
@@ -44,15 +52,15 @@ int main()
 
     Node *head = new Node(10);
     Node *a = new Node(20);
-    Node *b = new Node(30);
+    Node *tail = new Node(30);
 
     head->next = a;
     a->prev = head;
-    a->next = b;
-    b->prev = a;
+    a->next = tail;
+    tail->prev = a;
 
     int val = 5;
-    insert_at_head(head, val);
+    insert_at_head(head, tail, val);
 
     print_forword(head);
 

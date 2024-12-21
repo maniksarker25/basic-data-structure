@@ -1,4 +1,4 @@
-// create doubly linked list
+// print doubly linked list forward
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,6 +17,16 @@ public:
     }
 };
 
+void print_forward(Node *head)
+{
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        cout << temp->val << " ";
+        temp = temp->next;
+    }
+}
+
 int main()
 {
 
@@ -29,6 +39,9 @@ int main()
     a->prev = head;
     a->next = tail;
     tail->prev = a;
+
+    // print forward
+    print_forward(head);
 
     return 0;
 }

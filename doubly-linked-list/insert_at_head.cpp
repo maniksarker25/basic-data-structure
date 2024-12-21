@@ -1,4 +1,5 @@
-// print doubly linked list forward
+// insert at head
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -27,20 +28,32 @@ void print_forword(Node *head)
     }
 }
 
+// insert at head
+
+void insert_at_head(Node *&head, int val)
+{
+    Node *newNode = new Node(val);
+
+    newNode->next = head;
+    head->prev = newNode;
+    head = newNode;
+}
+
 int main()
 {
 
     Node *head = new Node(10);
     Node *a = new Node(20);
-    Node *tail = new Node(30);
+    Node *b = new Node(30);
 
-    // make connection
     head->next = a;
     a->prev = head;
-    a->next = tail;
-    tail->prev = a;
+    a->next = b;
+    b->prev = a;
 
-    // print forward
+    int val = 5;
+    insert_at_head(head, val);
+
     print_forword(head);
 
     return 0;

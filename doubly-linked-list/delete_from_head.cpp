@@ -33,17 +33,28 @@ void delete_from_head(Node *&head, Node *&tail)
     Node *deletedNode = head;
 
     // handle corner case
-    if (head->next == NULL)
-    {
-        head = NULL;
-        tail = NULL;
-        delete deletedNode;
-        return;
-    }
+    // if (head->next == NULL)
+    // {
+    //     head = NULL;
+    //     tail = NULL;
+    //     delete deletedNode;
+    //     return;
+    // }
+
+    // head = head->next;
+    // head->prev = NULL;
+    // delete deletedNode;
+
+    // another way
 
     head = head->next;
-    head->prev = NULL;
     delete deletedNode;
+    if (head == NULL)
+    {
+        tail = NULL;
+        return;
+    }
+    head->prev = NULL;
 }
 
 int main()

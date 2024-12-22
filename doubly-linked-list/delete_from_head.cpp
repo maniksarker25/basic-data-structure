@@ -1,4 +1,4 @@
-// inset at any position in doubly linked list
+// delete from head
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -27,26 +27,23 @@ void print_forword(Node *head)
     }
 }
 
-// insert at any pos
-
-void insert_at_any_post(Node *head, int idx, int val)
+// delete from head
+void delete_from_head(Node *&head, Node *&tail)
 {
+    Node *deletedNode = head;
 
-    // create a new node
-    Node *newNode = new Node(val);
-
-    // go to previous node of indx where need to insert
-    Node *temp = head;
-    for (int i = 1; i < idx; i++)
+    // handle corner case
+    if (head->next == NULL)
     {
-        temp = temp->next;
+        head = NULL;
+        tail = NULL;
+        delete deletedNode;
+        return;
     }
 
-    // make connection for insert
-    newNode->next = temp->next;
-    temp->next->prev = newNode;
-    temp->next = newNode;
-    newNode->prev = temp;
+    head = head->next;
+    head->prev = NULL;
+    delete deletedNode;
 }
 
 int main()
@@ -62,11 +59,10 @@ int main()
     a->next = tail;
     tail->prev = a;
 
-    // insert at any
-    insert_at_any_post(head, 2, 100);
-    insert_at_any_post(head, 1, 50);
+    delete_from_head(head, tail);
+    delete_from_head(head, tail);
+    // delete_from_head(head, tail);
 
-    // print forward
     print_forword(head);
 
     return 0;

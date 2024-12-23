@@ -70,7 +70,8 @@ int main()
         }
         insert_at_tail(head, tail, val);
     }
-
+    print_forword(head);
+    cout << endl;
     reverse_doubly_list(head, tail);
     print_forword(head);
 

@@ -1,4 +1,4 @@
-	Command being timed: "./reverse_singly_list.out"
+	Command being timed: "./reverse_doubly_list.out"
 	User time (seconds): 0.00
 	System time (seconds): 0.00
 	Percent of CPU this job got: 100%

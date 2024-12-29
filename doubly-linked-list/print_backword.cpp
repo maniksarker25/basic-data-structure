@@ -40,8 +40,7 @@ int main()
     a->next = tail;
     tail->prev = a;
 
-    // print forward
+    // print forward--------------
     print_backword(tail);
-
     return 0;
 }

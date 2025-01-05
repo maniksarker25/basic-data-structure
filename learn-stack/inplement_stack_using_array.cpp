@@ -36,6 +36,23 @@ public:
 
 int main()
 {
-    cout << "nice";
+    myStack st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    cout << st.top() << endl;
+    st.pop();
+    cout << st.top() << endl;
+    st.pop();
+    st.pop();
+    // need check for top and pop
+    if (st.empty() == false)
+    {
+        cout << st.top() << endl;
+    }
+    if (st.empty() == false)
+    {
+        st.pop();
+    }
     return 0;
 }

@@ -19,10 +19,12 @@ class myQueue
 {
     Node *head = NULL;
     Node *tail = NULL;
+    int sz = 0;
 
     // function for push
     void push(int val)
     {
+        sz++;
         Node *newNode = new Node(val);
         if (head == NULL)
         {
@@ -36,6 +38,7 @@ class myQueue
     // function for pop
     void pop()
     {
+        sz--;
         Node *deletedNode = head;
         head = head->next;
         delete deletedNode;
@@ -43,6 +46,30 @@ class myQueue
         {
             tail = NULL;
         }
+    }
+
+    // function for front
+    int front()
+    {
+        return head->val;
+    }
+
+    // function for back
+    int back()
+    {
+        return tail->val;
+    }
+
+    // function for size
+    int size()
+    {
+        return sz;
+    }
+
+    // check empty
+    bool empty()
+    {
+        return head == NULL;
     }
 };
 

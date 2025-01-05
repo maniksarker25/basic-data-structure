@@ -50,7 +50,7 @@ int main()
     {
         cout << st.top() << endl;
     }
-    if (st.empty() == false)
+    if (!st.empty())
     {
         st.pop();
     }

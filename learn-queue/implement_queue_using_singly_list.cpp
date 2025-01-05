@@ -34,7 +34,16 @@ class myQueue
         tail = newNode;
     }
     // function for pop
-    
+    void pop()
+    {
+        Node *deletedNode = head;
+        head = head->next;
+        delete deletedNode;
+        if (head == NULL)
+        {
+            tail = NULL;
+        }
+    }
 };
 
 int main()

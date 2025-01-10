@@ -4,6 +4,7 @@ using namespace std;
 
 class myStack
 {
+    // make changes
 public:
     list<int> l;
 

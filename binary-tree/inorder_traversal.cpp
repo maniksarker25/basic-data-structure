@@ -17,15 +17,15 @@ public:
     }
 };
 
-void preorder(Node *root)
+void inorder(Node *root)
 {
     if (root == NULL)
     {
         return;
     }
+    inorder(root->left);      // left
     cout << root->val << " "; // root
-    preorder(root->left);     // left
-    preorder(root->right);    // right
+    inorder(root->right);     // right
 }
 
 int main()
@@ -43,7 +43,7 @@ int main()
     b->left = d;
     b->right = e;
 
-    preorder(root);
+    inorder(root);
 
     return 0;
 }

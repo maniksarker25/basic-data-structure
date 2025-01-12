@@ -34,11 +34,11 @@ void level_order(Node *root)
         cout << f->val << " ";
 
         // step 3 : oi node ar childerns push kora
-        if (f->left != NULL)
+        if (f->left)
         {
             q.push(f->left);
         }
-        if (f->right != NULL)
+        if (f->right)
         {
             q.push(f->right);
         }

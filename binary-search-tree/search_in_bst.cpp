@@ -15,7 +15,6 @@ public:
     }
 };
 
-
 Node *intput_tree()
 {
     int val;
@@ -103,8 +102,38 @@ void level_order(Node *root)
     }
 }
 
+bool search(Node *root, int val)
+{
+    if (!root)
+    {
+        return false;
+    }
+    if (root->val == val)
+    {
+        return true;
+    }
+    if (root->val > val)
+    {
+        bool l = search(root->left, val);
+        return l;
+    }
+    else
+    {
+        bool r = search(root->right, val);
+        return r;
+    }
+}
+
 int main()
 {
-    Node*root = intput_tree();
+    Node *root = intput_tree();
+    int val;
+    cin >> val;
+    if(search(root,val)){
+        cout << "Found" << endl;
+    }
+    else{
+        cout << "Not found" << endl;
+    }
     return 0;
 }

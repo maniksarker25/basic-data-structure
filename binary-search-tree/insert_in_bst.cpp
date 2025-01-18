@@ -102,49 +102,59 @@ void level_order(Node *root)
     }
 }
 
-void insert(Node *root, int val)
+void insert(Node *&root, int val)
 {
     if (!root)
     {
-        return false;
-    }
-    if (root->val == val)
-    {
-        return true;
+        root = new Node(val);
+        return;
     }
     if (root->val > val)
     {
-        bool l = search(root->left, val);
-        return l;
+        if (root->left == NULL)
+        {
+            root->left = new Node(val);
+        }
+        else
+        {
+            insert(root->left, val);
+        }
     }
     else
     {
-        bool r = search(root->right, val);
-        return r;
+        if (root->right == NULL)
+        {
+            root->right = new Node(val);
+        }
+        else
+        {
+            insert(root->right, val);
+        }
     }
 }
 
-
-
-void level_order_print(Node*root){
-    queue<Node*>q;
-    if(root){
+void level_order_print(Node *root)
+{
+    queue<Node *> q;
+    if (root)
+    {
         q.push(root);
     }
     while (!q.empty())
     {
-        Node* f  = q.front();
+        Node *f = q.front();
         q.pop();
 
         cout << f->val << " ";
-        if(f->left){
+        if (f->left)
+        {
             q.push(f->left);
         }
-        if(f->right){
+        if (f->right)
+        {
             q.push(f->right);
         }
     }
-    
 }
 
 int main()
@@ -153,5 +163,6 @@ int main()
     int val;
     cin >> val;
     insert(root, val);
+    level_order(root);
     return 0;
 }

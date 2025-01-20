@@ -50,6 +50,7 @@ Node *convert_array_to_bst(int a[], int n, int l, int r)
     Node *right_root = convert_array_to_bst(a, n, mid + 1, r);
     root->left = left_root;
     root->right = right_root;
+    return root;
 }
 
 int main()

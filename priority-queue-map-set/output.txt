@@ -1,6 +1,7 @@
-2
-hamim 0
-rahim 3
-shamim 15
-tamim 2
-aca
+He 1
+I 1
+They 1
+We 1
+cricket 1
+football 3
+love 4

@@ -1,7 +1,1 @@
-He 1
-I 1
-They 1
-We 1
-cricket 1
-football 3
-love 4
+1 2 3 4 5 6 8 nai

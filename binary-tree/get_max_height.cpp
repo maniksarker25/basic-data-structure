@@ -79,7 +79,7 @@ Node *intput_tree()
 }
 
 
-
+// max height 
 int max_height(Node*root){
     if(root == NULL){
         return 0;
